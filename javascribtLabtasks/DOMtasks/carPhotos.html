@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .displayDiv{
+        width: 400px;
+        height: 300px;
+        background-color: aliceblue;
+        border: 2px solid blue;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img{
+        border-radius: 20px;
+    }
+</style>
+<body>
+
+    <div class="img-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Kbs4Cq0-D-Z9p94FcNxTx9LuoU5HSGtTvg&s" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Sqy_Jx2ZJVmI60I_3fvj7TcNsCGFWuRPcA&s" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7kstE2UUElhdObTXjky2sFnAm3aGp8MB4xA&s" alt="">
+    </div>
+    <div class="displayDiv">
+        Image Container
+    </div>
+
+    <script>
+        const imgs=document.querySelectorAll("img")
+        const imgContainer = document.querySelector('.img-container')
+        const displayDiv = document.querySelector('.displayDiv');
+
+        console.log(imgs);
+        for (let index = 0; index < imgs.length; index++) {
+            imgs[index].addEventListener("mouseenter", (e) => {
+            console.log(e.target.src)
+            // displayDiv.innerHTML=` <img src=${e.target.src} alt="">`
+            displayDiv.style.backgroundImage=`url(${e.target.src})`
+            displayDiv.innerHTML=''
+        });  
+        imgs[index].addEventListener("mouseleave", () => {
+            displayDiv.style.backgroundImage=`none`
+            displayDiv.innerHTML='Image Container'
+        });       
+        }
+    </script>
+</body>
+</html>

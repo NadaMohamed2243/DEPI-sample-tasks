@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        #container{
+            width: 500px;
+            height: 500px;
+            background-color: antiquewhite;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img{
+            border-radius: 30px;
+            width: 450px;
+            height: 450px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <!-- <img src="paris.jpg" alt="Feature Image"> -->
+    
+    <script>
+        const container=document.getElementById('container')
+        console.log(container);
+        
+        imageArray=["Feature Image.png","listen.jpg",'paris.jpg']
+        imageArray.forEach((element, index) => {
+            setInterval(() => {
+                container.innerHTML = `<img src="${element}" alt="Image ${index + 1}">`
+            }, 1000 * (index + 1));
+
+            
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Moving</title>
+  </head>
+  <style>
+    .box {
+      background-color: rgb(179, 171, 160);
+      width: 500px;
+      height: 500px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div class="box">Enter here to see dim</div>
+
+    <script>
+      const movementbox = document.querySelector(".box");
+      movementbox.addEventListener("mousemove", (e) => {
+        console.log(e);
+        movementbox.innerHTML = `your location is ${e.screenX} in x dim and ${e.screenY} in y dim`;
+      });
+      movementbox.addEventListener("mouseleave", () => {
+        movementbox.innerHTML = "Enter here to see dim";
+      });
+    </script>
+  </body>
+</html>

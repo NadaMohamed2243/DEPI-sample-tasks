@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js lab1</title>
+</head>
+
+<body>
+    <h1 style="text-align: center">JavaScript Lab1</h1>
+    <h2 style="text-align: center">
+        (This lab is for deeply understand the language, try all code blocks and
+        discuss the code with your lab instructor)
+    </h2>
+    <ol>
+        <li>Create your first html file that contains any html tags.</li>
+
+        <li>
+            Create an external JavaScript file and name it External.js ,then define
+            the following variables in this file
+            <ol type="a">
+                <li>
+                    Three number variables (number1,number2,number3) with different
+                    values (3,2.9,0xff)
+                    <div>
+                        <span style="color: red">Note:</span> define number1 with var ,
+                        number2 with let and number3 with const.
+                    </div>
+                </li>
+
+                <li>
+                    Your firstName ,middleName and lastName variables Note: define
+                    firstName with “ , middleName with ‘ and lastName with `(backtick).
+                </li>
+
+                <li>
+                    Define an array that holds different numbers and name it numbers
+                </li>
+
+                <li>Define a flag variable with value true</li>
+
+                <li>Finally print on log “This is the External JavaScript file”</li>
+
+                <img src="imgs/external.png" alt="" srcset="" width="500px" height="500px" style="margin: 30px" />
+                <img src="imgs/console.png" alt="" srcset="" width="300px" height="450px" style="margin: 30px" />
+            </ol>
+        </li>
+
+        <li>
+            Try the following assignments and write your comment
+            <ol type="a">
+                <li>
+                    On External.js ->print the value of number1 on console before
+                    number1 definition line ?!
+                    <div>
+                        <img src="imgs/3_a.png" alt="" srcset="" width="300px" height="170px" style="margin: 30px" />
+                        <img src="imgs/3_a_con.png" alt="" srcset="" width="300px" height="170px"
+                            style="margin: 30px" />
+
+                    </div>
+                    <p style="font-weight: bolder; color: red">
+                        My comment : JS compiler read the code line by line , if we try to
+                        print a variable before we declare it the JS code don't know any
+                        thing about it so the result will be undefined and cause an Error
+                        (ReferenceError) Cannot access 'number(the variable)' before initialization
+                    </p>
+                </li>
+                <li>
+                    Create another internal script before external script in html and
+                    print the value of number1?
+                    <div>
+                        <img src="imgs/3_b.png" alt="" srcset="" width="300px" height="170px" style="margin: 30px" />
+                        <img src="imgs/3_b_c.png" alt="" srcset="" width="300px" height="170px" style="margin: 30px" />
+
+                    </div>
+                    <p style="font-weight: bolder; color: red">
+                        Same as previos point , the JS compiler will see the internal script before external one so any
+                        variable in external file the compiler (during see internal ) don't know any thing about it so
+                        the result will be undefined and cause an Error
+                        (ReferenceError) number(the variable) is not defined
+                    </p>
+                </li>
+                <li>Now add another internal script after external.js script in html
+                    file and print the same value?
+                    <div>
+                        <img src="imgs/3_c.png" alt="" srcset="" width="300px" height="170px" style="margin: 30px" />
+                        <img src="imgs/3_c_c.png" alt="" srcset="" width="300px" height="170px" style="margin: 30px" />
+
+                    </div>
+                    <p style="font-weight: bolder; color: red">
+                        (Will get no error) Order of Scripts: The order in which scripts are loaded and executed
+                        matters. Variables cannot
+                        be accessed before they are defined unless they are declared with var and accessed before
+                        assignment (which gives undefined).
+                    </p>
+                </li>
+                <li> WHAT IF you remove var keyword from number1 definition
+                    and repeat the previous 3 steps , does the result change?
+                    <p style="font-weight: bolder; color: red">
+                        Same as previous
+                    </p>
+                </li>
+                <li>
+                    Try to change the value of number1, number2 or number 3 on
+                    developer tool console? What will happen???
+                    <div>
+                        <img src="imgs/3_D.png" alt="" srcset="" width="300px" height="170px" style="margin: 30px" />
+                        <img src="imgs/3_D_C.png" alt="" srcset="" width="300px" height="170px" style="margin: 30px" />
+
+                    </div>
+                    <p style="font-weight: bolder; color: red">
+                        There is no problem in number1 and number2 Variable number3 will get error because it's a
+                        constant and we shouldn't ty to apdate it
+                    </p>
+                </li>
+                <li>Try to change your firstName character at index 3
+                    ,firstName[3]=’A’
+                    Then print firstName variable on console.
+                    <div>
+                        <img src="imgs/3-e.png" alt="" srcset="" width="300px" height="100px" style="margin: 30px" />
+                        <img src="imgs/3-e-c.png" alt="" srcset="" width="300px" height="50px" style="margin: 30px" />
+
+                    </div>
+                    <p style="font-weight: bolder; color: red">
+                        There has no effect, so firstName remains "John". (Strings in JavaScript are immutable, meaning
+                        you cannot change individual characters directly.)
+                    </p>
+                </li>
+                <li> Print typeof all your variables </li>
+                <div>
+                    <img src="imgs/3-f.png" alt="" srcset="" width="300px" height="230px" style="margin: 30px" />
+                    <img src="imgs/3-f-c.png" alt="" srcset="" width="300px" height="250px" style="margin: 30px" />
+
+                </div>
+
+            </ol>
+        </li>
+        <li>
+            Now inside the html create an embedded script tag , then apply
+            the following assignments and print the result on console
+            (console.log function)
+            <ol type="a">
+                <li>
+                    Summation of number1 and number2
+                </li>
+                <li>
+                    Summation of number1 and numbers array
+                </li>
+                <li>Summation of flag and number2 </li>
+                <li>Summation of firstName and flag </li>
+                <li> Summation of number1 and firstName </li>
+                <li>Multiplication of number1 and flag </li>
+                <li> Divide number1 and latName </li>
+                <li> Print your full Name with firstName , middleName and
+                    lastName variables with string template and backtick (ES6). </li>
+                <li>Display all array values on console</li>
+                <li>Display Numbers array but each number should be multiplied
+                    by 5
+                    Then display only values that greater than 20 from resulted
+                    array </li>
+                    <div> <img src="imgs/f-2.png" alt="" srcset="" width="600px" height="700px" style="margin: 30px" />
+    
+                        <img src="imgs/f-1.png" alt="" srcset="" width="570px" height="650px" style="margin: 30px" />
+                       
+                    </div>
+
+            </ol>
+        </li>
+    </ol>
+
+    <script>
+        // Variable Definitions
+        let number1 = 10;
+        let number2 = 20;
+        let flag = true;
+        let firstName = "John";
+        let middleName = "William";
+        let lastName = "Doe";
+        let numbers = [2, 5, 8, 15, 22, 30];
+
+        // a. Summation of number1 and number2
+        console.log(number1 + number2);  // Output: 30
+
+        // b. Summation of number1 and numbers array
+        console.log(number1 + numbers);  // Output: "10,2,5,8,15,22,30"
+        // Explanation: The `numbers` array is coerced into a string,
+        // so this is string concatenation.
+
+        // c. Summation of flag and number2
+        console.log(flag + number2);  // Output: 21
+        // Explanation: `true` is coerced into 1, so the result is 1 + 20 = 21.
+
+        // d. Summation of firstName and flag
+        console.log(firstName + flag);  // Output: "Johntrue"
+        // Explanation: The boolean `flag` is coerced into a string "true".
+
+        // e. Summation of number1 and firstName
+        console.log(number1 + firstName);  // Output: "10John"
+        // Explanation: `number1` is coerced into a string, so this is string concatenation.
+
+        // f. Multiplication of number1 and flag
+        console.log(number1 * flag);  // Output: 10
+        // Explanation: `true` is coerced into 1, so the result is 10 * 1 = 10.
+
+        // g. Divide number1 and lastName
+        console.log(number1 / lastName);  // Output: NaN (Not a Number)
+        // Explanation: Division of a number by a string that cannot
+        // be converted into a number results in NaN.
+
+        // h. Print your full Name with string template and backtick (ES6)
+        console.log(`My full name is ${firstName} ${middleName} ${lastName}.`);
+        // Output: "My full name is John William Doe."
+
+        // i. Display all array values on console
+        console.log(numbers);  // Output: [2, 5, 8, 15, 22, 30]
+        // j. Display Numbers array but each number should be multiplied by 5
+        let multipliedNumbers = numbers.map(num => num * 5);
+        console.log(multipliedNumbers);  // Output: [10, 25, 40, 75, 110, 150]
+        // Display only values that are greater than 20 from the resulted array
+        let filteredNumbers = multipliedNumbers.filter(num => num > 20);
+        console.log(filteredNumbers);  // Output: [25, 40, 75, 110, 150]
+
+
+
+    </script>
+    <!-- <script>
+        console.log(number1);
+        console.log(number2);
+        console.log(number3);
+    </script> -->
+    <!-- <script src="External.js"></script> -->
+    <!-- <script>
+        console.log(number1);
+        console.log(number2);
+        console.log(number3);
+    </script> -->
+</body>
+
+</html>

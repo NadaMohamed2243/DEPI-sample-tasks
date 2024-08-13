@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display array</title>
+</head>
+<style>
+    .blue-background{
+        background-color: rgb(215, 250, 234);
+    }
+</style>
+<body>
+
+    <table border="1px">
+        <tr style="background-color: rgb(90, 141, 100);">
+            <th>id</th>
+            <th>Name</th>
+        </tr>
+    </table>
+    
+
+    <script>
+        table=document.querySelector('table')
+        console.log(table);
+        const namesArray=['Nada Mohamed','Ahmed Mostafa','Mohamed Ibrahim','Youmna Samir']
+        namesArray.map((el,index) =>
+        {
+            console.log(index);
+            console.log(el);
+            let rowClass = index % 2 === 1 ? 'blue-background' : '';
+            table.innerHTML +=  
+                `<tr class="${rowClass}">
+                    <td>${index+=1}</td>
+                    <td>${el}</td>
+                </tr>`
+        });
+        console.log(table);
+    </script>
+</body>
+</html>

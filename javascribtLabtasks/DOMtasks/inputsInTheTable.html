@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs in the Table</title>
+    <style>
+        .blue-background {
+            background-color: rgb(215, 250, 234);
+        }
+        table {
+            min-width: 450px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="add-form">
+        <input type="text" placeholder="name" id="name"/>
+        <input type="text" placeholder="age" id="age"/>
+        <button type="submit">add</button>
+    </form>
+    <table>
+        <tr style="background-color: rgb(110, 196, 110);">
+            <th>id</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </table>
+
+    <script>
+        const table = document.querySelector('table');
+        const form = document.getElementById('add-form');
+        const nameInput = document.getElementById('name');
+        const ageInput = document.getElementById('age');
+        let id = 1;
+
+        const namesArray = [
+            { name: 'nada', age: '24' },
+            { name: 'mohamed', age: '10' },
+            { name: 'ahmed', age: '20' },
+            { name: 'ibrahim', age: '30' }
+        ];
+
+        namesArray.forEach((el, index) => {
+            console.log(index);
+            console.log(el);
+            let rowClass = index % 2 === 1 ? 'blue-background' : '';
+            table.innerHTML +=  
+                `<tr class="${rowClass}">
+                    <td>${id++}</td>
+                    <td>${el.name}</td>
+                    <td>${el.age}</td>
+                </tr>`;
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let rowClass = (id+1) % 2 === 1 ? 'blue-background' : '';
+            table.innerHTML +=  
+                `<tr class="${rowClass}">
+                    <td>${id++}</td>
+                    <td>${nameInput.value}</td>
+                    <td>${ageInput.value}</td>
+                </tr>`;
+
+            nameInput.value = '';
+            ageInput.value = '';
+        });
+    </script>
+</body>
+</html>
